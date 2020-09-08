@@ -11,7 +11,7 @@ require 'openssl'
 # JWS - Json Web Signature **
 
 #=======
-# Key JTW
+# Key JWT
 #=======
 @key = 'sales-key'
 
