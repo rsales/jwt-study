@@ -11,12 +11,12 @@ require 'openssl'
 # JWS - Json Web Signature **
 
 #=======
-# Key JTW
+# Key JWT
 #=======
 key = 'sales-key'
 
 #=======
-# Header JTW - Informações do JWT
+# Header JWT - Informações do JWT
 #=======
 
 header = [
@@ -28,7 +28,7 @@ header = JSON.generate(header)
 header = Base64.encode64(header).tr('+/', '-_').gsub(/[\n=]/, '')
 
 #=======
-# Payload JTW - correspondente
+# Payload JWT - correspondente
 #=======
 
 payload = [
@@ -41,7 +41,7 @@ payload = JSON.generate(payload)
 payload = Base64.encode64(payload).tr('+/', '-_').gsub(/[\n=]/, '')
 
 #=======
-# signature JTW
+# signature JWT
 #=======
 
 signature = OpenSSL::HMAC.digest('sha256', key, "#{header}.#{payload}")
