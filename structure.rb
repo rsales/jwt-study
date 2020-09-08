@@ -16,7 +16,7 @@ require 'openssl'
 @key = 'sales-key'
 
 #=======
-# Header JTW - Informações do JWT
+# Header JWT - Informações do JWT
 #=======
 
 @header = [
@@ -28,7 +28,7 @@ require 'openssl'
 @header = Base64.encode64(@header).tr('+/', '-_').gsub(/[\n=]/, '')
 
 #=======
-# Payload JTW - correspondente
+# Payload JWT - correspondente
 #=======
 
 @payload = [
@@ -41,7 +41,7 @@ require 'openssl'
 @payload = Base64.encode64(@payload).tr('+/', '-_').gsub(/[\n=]/, '')
 
 #=======
-# signature JTW
+# signature JWT
 #=======
 
 @signature = OpenSSL::HMAC.digest('sha256', @key, "#{@header}.#{@payload}")
